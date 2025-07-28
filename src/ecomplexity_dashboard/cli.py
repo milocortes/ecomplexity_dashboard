@@ -1,10 +1,13 @@
 import os
 import subprocess
+import sys
 
 def main(port=8000):
     command = [
+                "uvx",
                 "marimo",
                 "run",
+                "--sandbox",
                 f"{os.path.dirname(os.path.realpath(__file__))}/dashboard.py",
                 "--port",
                 str(port)]
@@ -18,7 +21,7 @@ def main(port=8000):
         process = subprocess.Popen(command)
         print(f"Marimo app deployed at http://localhost:{port}")
         print("Press Ctrl+C to stop the application.")
-        process.wait() # Wait for the process to terminate (e.g., when you stop it manually)
+        sys.exit(process.wait()) # Wait for the process to terminate (e.g., when you stop it manually)
     except FileNotFoundError:
         print("Error: 'marimo' command not found. Is marimo installed and in your PATH?")
     except Exception as e:

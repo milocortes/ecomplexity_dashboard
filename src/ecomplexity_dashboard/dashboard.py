@@ -1,3 +1,11 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "altair>=5.5.0",
+#     "pyarrow>=21.0.0",
+#     "vega-datasets>=0.9.0",
+# ]
+# ///
 import marimo
 
 __generated_with = "0.14.13"
