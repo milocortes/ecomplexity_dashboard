@@ -1,0 +1,27 @@
+[project]
+name = "ecomplexity-dashboard"
+version = "0.1.0"
+description = "This package provides interactive visualization of the analysis of industrial strategies on the Economic Complexity framework."
+readme = "README.md"
+authors = [
+    { name = "Hermilo Cortes", email = "hermilocg@hotmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "altair>=5.5.0",
+    "marimo>=0.14.13",
+    "numpy>=2.3.2",
+    "pyarrow>=21.0.0",
+    "rich>=14.1.0",
+    "typer>=0.16.0",
+    "vega-datasets>=0.9.0",
+]
+
+[project.scripts]
+ecomplexity-dashboard = "ecomplexity_dashboard:main"
+ecomplexity-dashboard-test = "ecomplexity_dashboard.cli:main"
+ecomplexity-dashboard-np-version = "ecomplexity_dashboard.utils:numpy_version"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
